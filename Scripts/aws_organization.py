@@ -22,6 +22,8 @@ def main():
     parser.add_argument("--role-name", default="Ermetic", type=str)
     arguments = parser.parse_args()
 
+    logging.info(f"Configure {arguments.configure} starting")
+    
     if arguments.configure == "organization":
         configure_organization(
             arguments.role_name,
@@ -33,7 +35,9 @@ def main():
             arguments.role_name,
             arguments.user_access_key_id,
             arguments.user_secret_access_key)
-
+    
+    logging.info(f"Configure {arguments.configure} completed")
+    
 
 def configure_organization(role_name, trail_name, user_access_key_id, user_secret_access_key):
         valid_trails = []
