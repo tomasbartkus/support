@@ -10,7 +10,7 @@ TRAIL_BUCKET_ACCOUNT_ROLE_POLICY_FILE_NAME = "trail_bucket_account_role_policy.j
 
 
 def main():
-    logging_format = "%(asctime)s [%(levelname)-7s] %(funcName)s: %(message)s"
+    logging_format = "%(asctime)s [%(levelname)-7s] %(message)s"
     logging_handlers = [logging.FileHandler("aws_organization.log", mode="w"), logging.StreamHandler(sys.stdout)]
     logging.basicConfig(level=logging.INFO, handlers=logging_handlers, format=logging_format)
 
